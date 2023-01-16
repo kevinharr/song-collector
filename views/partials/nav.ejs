@@ -9,6 +9,10 @@
     >
     ADD SONG 
   </a>
+  <a href="/songs" <%- title === 'All Songs' ? 'class="active"' : '' %>
+    >
+    ALL SONGS
+  </a>
   <a href="/tacos">🌮</a>
   <a href="/profiles">🐱</a>
   <% if (user) { %>

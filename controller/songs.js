@@ -12,7 +12,7 @@ function create(req, res) {
     }
     Song.create(req.body)
     .then(song => {
-        res.redirect('/songs/new')
+        res.redirect('/songs')
     })
     .catch(err => {
         console.log(err)
@@ -20,7 +20,22 @@ function create(req, res) {
     })
 }
 
+function index(req, res) {
+    Song.find({})
+    .then(songs => {
+      res.render('songs/index', {
+        songs,
+        title: "All Songs",
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect("/")
+    })
+  }
+
 export {
     newSong as new,
     create,
+    index,
 }
