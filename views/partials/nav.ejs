@@ -4,6 +4,11 @@
 </head>
 <body>
 <nav>
+  <i class="fas fa-light fa-music"></i>
+  <a href="/songs/new" <%- title === 'Add Song' ? 'class="active"' : '' %>
+    >
+    ADD SONG 
+  </a>
   <a href="/tacos">🌮</a>
   <a href="/profiles">🐱</a>
   <% if (user) { %>
