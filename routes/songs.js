@@ -5,6 +5,8 @@ const router = Router()
 
 router.get('/new', songsCtrl.new)
 
+router.get('/:id', songsCtrl.show)
+
 router.post('/', songsCtrl.create)
 
 export {

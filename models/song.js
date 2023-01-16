@@ -5,14 +5,14 @@ const Schema = mongoose.Schema
 const songSchema = new Schema({
     song: { 
         type: String,
-        required: true,
+        required: true},
     artist: String,
     album: String,
     year: String,
     genre: {
         type: String,
         enum: ['Pop', 'Alternative', 'Rock', 'Rap', 'Country', 'Dance']
-}, {
+}}, {
     timestamps: true
 })
 
