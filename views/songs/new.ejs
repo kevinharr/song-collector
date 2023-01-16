@@ -1,0 +1,32 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/songs/new.css" />
+<%- include('../partials/nav') %>
+
+<main>
+    <h1><%= title %></h1>
+    <form id="new-form" action="" method="">
+      <label for="title-input">Song:</label>
+      <input type="text" name="song" id="song-input">
+ 
+      <label for="artist-input">Artist:</label>
+      <input type="text" name="artist" id="artist-input">
+
+      <label for="album-input">Album:</label>
+      <input type="text" name="album" id="album-input">
+
+      <label for="year-input">Year:</label>
+      <input type="text" name="year" id="year-input">
+
+      <label for="genre">Genre:</label>
+      <select name="genra" id="genre-select">
+        <option value="Pop">Pop</option>
+        <option value="Alternative">Alternative</option>
+        <option value="Rock">Rock</option>
+        <option value="Rap">Rap</option>
+        <option value="Country">Country</option>
+        <option value="Dance">Dance</option>
+      </select>
+    </form>
+  </main>
+
+<%- include("../partials/footer") %>
