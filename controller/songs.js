@@ -59,7 +59,33 @@ function index(req, res) {
     })
   }
 
+  function edit(req, res) {
+    Song.findById(req.params.id)
+    .then(song => {
+        res.render("songs/edit", {
+            song,
+            title: "Edit Song"
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/")
+    })
+  }
 
+  function update(req, res) {
+    for (let key in req.body) {
+      if(req.body[key] === "") delete req.body[key]
+    }
+    Song.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then(song => {
+      res.redirect(`/songs`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect("/")
+    })
+  }
 
 export {
     newSong as new,
@@ -67,4 +93,6 @@ export {
     index,
     show,
     deleteSong as delete,
+    edit,
+    update,
 }

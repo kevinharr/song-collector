@@ -9,9 +9,13 @@ router.get('/new', songsCtrl.new)
 
 router.get('/:id', songsCtrl.show)
 
+router.get('/:id/edit', songsCtrl.edit)
+
 router.post('/', songsCtrl.create)
 
-router.delete("/:id", songsCtrl.delete)
+router.delete('/:id', songsCtrl.delete)
+
+router.put('/:id', songsCtrl.update)
 
 export {
     router
