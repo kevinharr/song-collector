@@ -16,7 +16,7 @@ function create(req, res) {
     })
     .catch(err => {
         console.log(err)
-        res.redirect('/songs/new')
+        res.redirect('/songs')
     })
 }
 
