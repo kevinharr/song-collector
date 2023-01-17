@@ -14,7 +14,7 @@ function newVenue(req, res) {
 }
 
 function create(req, res) {
-    Venue.create(reg.body)
+    Venue.create(req.body)
     .then(venue => {
        res.redirect('/venues/new')        
     })
