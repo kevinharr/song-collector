@@ -3,6 +3,8 @@ import * as songsCtrl from '../controller/songs.js'
 
 const router = Router()
 
+router.get('/', songsCtrl.index)
+
 router.get('/new', songsCtrl.new)
 
 router.get('/:id', songsCtrl.show)
