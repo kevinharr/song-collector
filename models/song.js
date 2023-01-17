@@ -3,14 +3,13 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const songSchema = new Schema({
-    song: String,
+    title: String,
     artist: String,
     album: String,
     year: String,
-    genre: {
-        type: String,
-        enum: ['Pop', 'Alternative', 'Rock', 'Rap', 'Country', 'Dance']
-}}, {
+    genre: String,
+        
+}, {
     timestamps: true
 })
 
