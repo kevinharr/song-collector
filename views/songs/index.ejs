@@ -13,10 +13,10 @@
         <th>Album</th>
         <th>Year</th>
         <th>Genre</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
-      <%# Oh hey, this is an ejs comment! It starts with a # %>
       <% songs.forEach(song => { %>
         <tr>
           <td><%= song.title %></td>
@@ -26,6 +26,14 @@
           <td><%= song.album %></td>
           <td><%= song.year %></td>
           <td><%= song.genre %></td>
+          <td>
+            <form
+              action="/songs/<%= song._id %>?_method=DELETE"
+              method="POST"
+            >
+              <button>X</button>
+            </form>
+          </td>
         </tr>
       <% }) %>
     </tbody>

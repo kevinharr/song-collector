@@ -48,6 +48,17 @@ function index(req, res) {
     })
   }
 
+  function deleteSong(req, res) {
+    Song.findByIdAndDelete(req.params.id)
+    .then(song => {
+        res.redirect("/songs")
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect("/songs")
+    })
+  }
+
 
 
 export {
@@ -55,4 +66,5 @@ export {
     create,
     index,
     show,
+    deleteSong as delete,
 }

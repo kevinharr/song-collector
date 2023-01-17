@@ -11,6 +11,8 @@ router.get('/:id', songsCtrl.show)
 
 router.post('/', songsCtrl.create)
 
+router.delete("/:id", songsCtrl.delete)
+
 export {
     router
 }
