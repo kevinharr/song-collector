@@ -8,6 +8,7 @@ const songSchema = new Schema({
         required: true
     },
     artist: String,
+    tour: [{type: Schema.Types.ObjectId, ref: 'Venue'}],
     album: String,
     year: String,
     genre: String,

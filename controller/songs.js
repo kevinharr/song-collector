@@ -1,4 +1,5 @@
 import { Song } from "../models/song.js"
+import { Venue } from "../models/venue.js"
 
 function newSong(req, res) {
     res.render("songs/new", {
@@ -36,12 +37,18 @@ function index(req, res) {
 
   function show(req, res) {
     Song.findById(req.params.id)
+    .populate('tour')
     .then(song => {
-      res.render('songs/show', {
-        title: "Song Detail",
-        song: song,
+        Venue.find({_id: {$nin: song.tour}})
+        .then(venues => {
+          res.render('songs/show', {
+            title: 'Song Detail',
+            song: song,
+            venues: venues,
+          })
+        })
       })
-    })
+  
     .catch(err => {
       console.log(err)
       res.redirect("/")
@@ -87,6 +94,25 @@ function index(req, res) {
     })
   }
 
+  function addToTour(req, res) {
+    Song.findById(req.params.id)
+    .then(song => {
+      song.tour.push(req.body.venueId)
+      song.save()
+          .then(() => {
+            res.redirect(`/songs/${song._id}`)
+          })
+      .catch(err => {
+        console.log(err);
+        res.redirect("/songs")
+      })
+    })
+    .catch(err => {
+      console.log(err);
+      res.redirect("/songs")
+    })
+  }
+  
 export {
     newSong as new,
     create,
@@ -95,4 +121,5 @@ export {
     deleteSong as delete,
     edit,
     update,
+    addToTour,
 }

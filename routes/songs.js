@@ -13,6 +13,8 @@ router.get('/:id/edit', songsCtrl.edit)
 
 router.post('/', songsCtrl.create)
 
+router.post('/:id/venues', songsCtrl.addToTour)
+
 router.delete('/:id', songsCtrl.delete)
 
 router.put('/:id', songsCtrl.update)

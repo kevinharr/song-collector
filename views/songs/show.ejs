@@ -13,7 +13,30 @@
     <div><%= song.album %></div>
     <div>Genre: </div>
     <div><%= song.genre %></div>
+    <br>
+    <div>Tour Locations:</div>
+    <ul>
+        <% song.tour.forEach(tourLocation => { %>
+          <li><% tourLocation.name %></li>      
+       <% }) %>
+    </ul>
   </section>
+
+  <form id="add-venue" action="/songs/<%= song._id %>/venues" method="POST">
+    
+    <label for=date-input">Date:</label>
+    <input type="text" name="date" id="date-input">
+
+    <label for=start-input">Start:</label>
+    <input type="text" name="start" id="start-input">
+
+    <select name="venueId">
+        <% venues.forEach(venue => { %>
+        <option value="<% venue._id %>"><%=venue.name %></option>"
+        <% }) %>
+    </select>
+    <button type="submit">Add Venue</button>
+  </form>
 </main>
   
 <%- include('../partials/footer') %>
