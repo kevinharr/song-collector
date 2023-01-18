@@ -1,6 +1,7 @@
 import { Router} from 'express'
 import * as songsCtrl from '../controller/songs.js'
 
+
 const router = Router()
 
 router.get('/', songsCtrl.index)

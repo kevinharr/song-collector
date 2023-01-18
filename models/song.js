@@ -7,6 +7,7 @@ const tourSchema = new Schema({
     date: String,
     start: String,
     venue: String,
+    owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 })
 
 const songSchema = new Schema({

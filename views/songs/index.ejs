@@ -13,8 +13,10 @@
         <th>Album</th>
         <th>Year</th>
         <th>Genre</th>
+        <% if (user) { %>
         <th>Delete</th>
         <th>Edit</th>
+        <% } %>
       </tr>
     </thead>
     <tbody>
@@ -27,7 +29,10 @@
           <td><%= song.album %></td>
           <td><%= song.year %></td>
           <td><%= song.genre %></td>
+          
+          <% if (user) { %>
           <td>
+           
             <form
               action="/songs/<%= song._id %>?_method=DELETE"
               method="POST"
@@ -40,6 +45,7 @@
                 <button>/</button>
             </a>
           </td>
+          <% } %>
         </tr>
       <% }) %>
     </tbody>
