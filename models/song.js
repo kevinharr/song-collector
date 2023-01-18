@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const tourSchema = new Schema({
     day: String,
     date: String,
-    time: String,
+    start: String,
     venue: String,
 })
 

@@ -12,11 +12,11 @@ function create(req, res) {
     }
     Song.create(req.body)
     .then(song => {
-        res.redirect(`/songs/${song._id}`)
+        res.redirect('/songs')
     })
     .catch(err => {
         console.log(err)
-        res.redirect(`/songs/${song._id}`)
+        res.redirect('/songs')
     })
 }
 
@@ -38,7 +38,7 @@ function index(req, res) {
     Song.findById(req.params.id)
     .then(song => {
       res.render('songs/show', {
-        title: 'Song Detail',
+        title: 'Tour Information',
           song: song,
       })
     })

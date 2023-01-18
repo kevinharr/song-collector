@@ -12,18 +12,18 @@
             <tr>
                 <th>Day</th>
                 <th>Date</th>
-                <th>Time</th>
+                <th>Start</th>
                 <th>Venue</th>
             </tr>
         </thread>
         <tbody>
-            <% songs.tours.forEach(tour => { %>
+            <% song.tours.forEach(tour => { %>
             <tr>
                 <td><%= tour.day %></td>
                 <td><%= tour.date %></td>
                 <td><%= tour.start %></td>
                 <td><%= tour.venue %></td>
-            </tr>)
+            </tr>
             <% }) %>
         </tbody>
       </table>
@@ -31,7 +31,6 @@
 <h3>Not On Tour</h3>}
 <% } %>
 
-<h2>Tour Dates</h2>
 <form 
   id="add-tour-form"
   action="/songs/<%= song._id %>/tours"
@@ -46,18 +45,17 @@
     <option value="THUR">THUR</option>
     <option value="FRI">FRI</option>
     <option value="SAT">SAT</option>
-    <option value="SUN">SUN</option>
   </select>
   
   <label for="date-input">Date:</label>
   <input type="text" name="date" id="date-input">
 
-  <label for="start-time-input">Start Time:</label>
+  <label for="start-input">Start:</label>
   <input type="text" name="start" id="start-input">
 
   <label for="venue-input">Venue:</label>
   <input type="text" name="venue" id="start-input">
-  
+
   <button type="submit">Add Tour Date</button>
 </form>
 </main>
