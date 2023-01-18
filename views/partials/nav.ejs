@@ -5,19 +5,20 @@
 <body>
 <nav>
   <i class="fas fa-light fa-music"></i>
+  <a href="/">HOME</a>
   <% if (user) { %>
   <a href="/songs/new" <%- title === 'Add Song' ? 'class="active"' : '' %>
     >
     ADD SONG 
   </a>
   <% } %>
-  
+
   <a href="/songs" <%- title === 'All Songs' ? 'class="active"' : '' %>
     >
     ALL SONGS
   </a>
   <% if (user) { %>
-    <a href="/auth/logout">👋</a>
+    <a href="/auth/logout">LOGOUT</a>
   <% } else { %>
     <div 
       id="g_id_onload"
