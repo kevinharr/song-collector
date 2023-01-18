@@ -1,5 +1,4 @@
 import { Song } from "../models/song.js"
-import { Venue } from "../models/venue.js"
 
 function newSong(req, res) {
     res.render("songs/new", {
@@ -13,11 +12,11 @@ function create(req, res) {
     }
     Song.create(req.body)
     .then(song => {
-        res.redirect('/songs')
+        res.redirect(`/songs/${song._id}`)
     })
     .catch(err => {
         console.log(err)
-        res.redirect('/songs')
+        res.redirect(`/songs/${song._id}`)
     })
 }
 
@@ -37,24 +36,18 @@ function index(req, res) {
 
   function show(req, res) {
     Song.findById(req.params.id)
-    .populate('tour')
     .then(song => {
-        Venue.find({_id: {$nin: song.tour}})
-        .then(venues => {
-          res.render('songs/show', {
-            title: 'Song Detail',
-            song: song,
-            venues: venues,
-          })
-        })
+      res.render('songs/show', {
+        title: 'Song Detail',
+          song: song,
       })
-  
+    })
     .catch(err => {
       console.log(err)
       res.redirect("/")
     })
   }
-
+  
   function deleteSong(req, res) {
     Song.findByIdAndDelete(req.params.id)
     .then(song => {
@@ -94,25 +87,25 @@ function index(req, res) {
     })
   }
 
-  function addToTour(req, res) {
+  function createTour(req, res) {
     Song.findById(req.params.id)
     .then(song => {
-      song.tour.push(req.body.venueId)
+      song.tours.push(req.body)
       song.save()
-          .then(() => {
-            res.redirect(`/songs/${song._id}`)
-          })
+      .then(() => {
+        res.redirect(`/songs/${song._id}`)
+      })
       .catch(err => {
-        console.log(err);
-        res.redirect("/songs")
+        console.log(err)
+        res.redirect('/')
       })
     })
     .catch(err => {
-      console.log(err);
-      res.redirect("/songs")
+      console.log(err)
+      res.redirect('/')
     })
   }
-  
+
 export {
     newSong as new,
     create,
@@ -121,5 +114,5 @@ export {
     deleteSong as delete,
     edit,
     update,
-    addToTour,
+    createTour,
 }

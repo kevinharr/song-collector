@@ -4,39 +4,62 @@
 
 <main>
   <h1><%= title %></h1>
-  <section>
-    <div>Song: </div>
-    <div><%= song.title %></div>
-    <div>Artist: </div>
     <div><%= song.artist %></div>
-    <div>Album: </div>
-    <div><%= song.album %></div>
-    <div>Genre: </div>
-    <div><%= song.genre %></div>
     <br>
-    <div>Tour Locations:</div>
-    <ul>
-        <% song.tour.forEach(tourLocation => { %>
-          <li><% tourLocation.name %></li>      
-       <% }) %>
-    </ul>
-  </section>
+    <% if (song.tours.length) { %>
+      <table>
+        <thread>
+            <tr>
+                <th>Day</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Venue</th>
+            </tr>
+        </thread>
+        <tbody>
+            <% songs.tours.forEach(tour => { %>
+            <tr>
+                <td><%= tour.day %></td>
+                <td><%= tour.date %></td>
+                <td><%= tour.start %></td>
+                <td><%= tour.venue %></td>
+            </tr>)
+            <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+<h3>Not On Tour</h3>}
+<% } %>
 
-  <form id="add-venue" action="/songs/<%= song._id %>/venues" method="POST">
-    
-    <label for=date-input">Date:</label>
-    <input type="text" name="date" id="date-input">
+<h2>Tour Dates</h2>
+<form 
+  id="add-tour-form"
+  action="/songs/<%= song._id %>/tours"
+  method="POST"
+>
+  <label for="day">Day:</label>
+  <select name="day" id="day-select">
+    <option value="SUN">SUN</option>
+    <option value="MON">MON</option>
+    <option value="TUE">TUE</option>
+    <option value="WED">WED</option>
+    <option value="THUR">THUR</option>
+    <option value="FRI">FRI</option>
+    <option value="SAT">SAT</option>
+    <option value="SUN">SUN</option>
+  </select>
+  
+  <label for="date-input">Date:</label>
+  <input type="text" name="date" id="date-input">
 
-    <label for=start-input">Start:</label>
-    <input type="text" name="start" id="start-input">
+  <label for="start-time-input">Start Time:</label>
+  <input type="text" name="start" id="start-input">
 
-    <select name="venueId">
-        <% venues.forEach(venue => { %>
-        <option value="<% venue._id %>"><%=venue.name %></option>"
-        <% }) %>
-    </select>
-    <button type="submit">Add Venue</button>
-  </form>
+  <label for="venue-input">Venue:</label>
+  <input type="text" name="venue" id="start-input">
+  
+  <button type="submit">Add Tour Date</button>
+</form>
 </main>
   
 <%- include('../partials/footer') %>
