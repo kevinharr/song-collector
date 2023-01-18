@@ -31,6 +31,7 @@
 <h3>Not On Tour</h3>}
 <% } %>
 
+<% if (user) { %>
 <form 
   id="add-tour-form"
   action="/songs/<%= song._id %>/tours"
@@ -58,6 +59,7 @@
 
   <button type="submit">Add Tour Date</button>
 </form>
+<% } %>
 </main>
   
 <%- include('../partials/footer') %>
