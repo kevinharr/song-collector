@@ -5,10 +5,13 @@
 <body>
 <nav>
   <i class="fas fa-light fa-music"></i>
+  <% if (user) { %>
   <a href="/songs/new" <%- title === 'Add Song' ? 'class="active"' : '' %>
     >
     ADD SONG 
   </a>
+  <% } %>
+  
   <a href="/songs" <%- title === 'All Songs' ? 'class="active"' : '' %>
     >
     ALL SONGS
