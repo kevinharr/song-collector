@@ -1,4 +1,4 @@
-![This is an image of the splash page for Soundboard](/public/stylesheets/images/Soundboard_Splash_Page.jpg)
+![This is an image of the splash page for Soundboard](/public/stylesheets/images/Soundboard_Splash_Page_2.png)
 
 **Soundboard**
 
