@@ -1,65 +1,33 @@
-# MEN Stack with OAuth Template
+![This is an image of the splash screen for Bird Bux] (birdbux/pictures/Bird Bux Screenshot.png)
 
-This is a MEN Stack template that includes OAuth.
+Soundboard
 
-Use this to go build things! 🚀
+Soundboard is a database that stores all my favorite songs and upcoming concert dates for those artists.  I love music and seeing live acts.  This helps me do that in one place.  Also, my friends can see the type of music I like and tell me if they want to go to a show with me.
 
-## To Use This Template
+Let's see the Soundboard.
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
+Here are my planning materials.
 
-```bash
-git clone https://github.com/SEI-Remote/men-stack-oauth-template.git <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
+Technologies used 💾
 
-Once you are in the project directory:
+Embedded JavaScript
+HTML
+CSS
+git
+Mongoose/MongooseDB
+Express
+Node.js
+Adobe Photoshop
 
-```bash
-rm -rf .git
-```
+Credits 🙌
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+Concert photo from Adobe Stock.
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+Check out the Attributions.
 
-Re-initialize a git repository:
+Ice Box 🧊
 
-```bash
-git init
-```
-
-Create a repo for this project on GitHub and add that remote to your project with `git remote add origin Your-repo-URL-here`.
-
-Run npm i to fetch the template's dependencies:
-
-```bash
-npm i
-```
-
-touch a .env file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_CLIENT_ID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SESSION_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Replace the `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_SECRET`, and `SESSION_SECRET` with values that you provide.
-
-Delete this `README.md` file and finally, make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-You're done!
+[] AAU, I should be able to rate a song from one to 5 stars.
+[] AAU, I should be able to sort the songs by their star rating.
+[] AAU or as a guest, I should be able to click on a button next to the concert review data and add a review.
+[] AAU or as a guest, I should be able to click on a concert date and see all the reviews.
