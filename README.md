@@ -2,7 +2,7 @@
 
 **Soundboard**
 
-Soundboard is a database that stores all my favorite songs and upcoming concert dates for those artists.  I love music and seeing live acts.  This helps me manage that process in one place.  Also, my friends can see the type of music I like and tell me if they want to go to a show with me.
+Soundboard is a database that stores all my favorite songs and upcoming concert dates for those artists.  I love music and seeing live acts.  This helps me manage that process in one place.  Also, my friends can see the type of music I like and tell me if they want to go to a show with me.  The application allows me as the administrator to add songs and concert dates associated with those artists.  Visiters to the site can only view songs and concert dates.
 
 Let's get started.  Here's [Soundboard](https://song-collector.fly.dev/).
 
