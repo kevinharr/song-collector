@@ -1,8 +1,32 @@
  body {
-    background-image: url("/stylesheets/images/song background1500.jpg")
+    background-image: url("/stylesheets/images/song background1500darker.jpg");
 }
 
-img {
-    width: 3000px;
-}
+table {
+    width: 600 px;}
+
+    th, td {
+        padding: 7px 10px 10px 10px;}
+
+        th {
+            text-transform: uppercase;
+            /* letter-spacing: 0.1em; */
+            font-size:90%;
+            border-bottom: 2 px solid #020202;
+            border-top: 1px solid rgb(2, 2, 2);
+            text-align:left;
+        }
+
+        tr {
+            color:rgb(244, 240, 240);
+            font-size: 28px;
+            background-color:black;
+            border-color: black;
+        }
+
+        .button {
+            align-self: center;
+        }
+
+       
  

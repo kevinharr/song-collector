@@ -1,4 +1,29 @@
+table {
+    width: 600 px;}
 
+    th, td {
+        padding: 7px 10px 10px 10px;}
+
+        th {
+            text-transform: uppercase;
+            /* letter-spacing: 0.1em; */
+            font-size:90%;
+            border-bottom: 2 px solid #020202;
+            border-top: 1px solid rgb(2, 2, 2);
+            text-align:left;
+        }
+
+        tr {
+            color:rgb(244, 240, 240);
+            font-size: 20px;
+            background-color:black;
+            border-color: black;
+        }
+
+        #artist {
+            color: rgb(232, 199, 10);
+            font-size: 32px;
+        }
 
 
 
