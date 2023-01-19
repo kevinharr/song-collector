@@ -6,15 +6,15 @@
 <nav>
   <a href="/">HOME</a>
   <% if (user) { %>
-  <a href="/songs/new" <%- title === 'Add Song' ? 'class="active"' : '' %>
+  <a id="songs" href="/songs/new" <%- title === 'Add Song' ? 'class="active"' : '' %>
     >
     ADD SONGS 
   </a>
   <% } %>
 
-  <a href="/songs" <%- title === 'All Songs' ? 'class="active"' : '' %>
+  <a href="/songs" <%- title === 'Songs' ? 'class="active"' : '' %>
     >
-    SONGS
+    SONGS     
   </a>
   <% if (user) { %>
     <a href="/auth/logout">LOGOUT</a>
@@ -27,9 +27,9 @@
     ></div>
     <div 
       class="g_id_signin"
-      data-type="standard"
+      data-type="icon"
       data-size="large"
-      data-theme="outline"
+      data-theme="filled_blue"
       data-text="sign_in_with"
       data-shape="rectangular"
       data-logo_alignment="left"

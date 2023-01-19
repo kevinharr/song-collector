@@ -20,6 +20,10 @@ body {
   margin: 0;
 }
 
+#songs {
+  margin-right: 49px;
+}
+
 nav {
   background-color: #070707;
   color: #fbf9f9;

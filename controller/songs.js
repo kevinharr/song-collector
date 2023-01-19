@@ -2,7 +2,7 @@ import { Song } from "../models/song.js"
 
 function newSong(req, res) {
     res.render("songs/new", {
-        title: "Add Song",
+        title: "Add Songs",
     })
 }
 
@@ -25,7 +25,7 @@ function index(req, res) {
     .then(songs => {
       res.render('songs/index', {
         songs,
-        title: "All Songs",
+        title: "Songs",
       })
     })
     .catch(err => {
@@ -38,7 +38,7 @@ function index(req, res) {
     Song.findById(req.params.id)
     .then(song => {
       res.render('songs/show', {
-        title: 'Tour Information',
+        title: 'Tour Dates',
           song: song,
       })
     })
