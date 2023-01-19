@@ -27,5 +27,5 @@ Ice Box 🧊
 
 - [ ] Rate a song from 1 to 5 stars.
 - [ ] Sort the songs by their star rating.
-- [ ] Click on a button next to the concert review data and add a review.
+- [ ] Click on a button next to the concert date and add a review.
 - [ ] Click on a concert date and see all the reviews.
