@@ -1,4 +1,4 @@
-![This is an image of the splash page for Soundboard] (public/stylesheets/images/Soundboard Splash Page.jpg)
+![This is an image of the splash page for Soundboard] (/stylesheets/images/Soundboard_Splash_Page.jpg)
 
 **Soundboard**
 
@@ -26,6 +26,6 @@ Credits 🙌
 Ice Box 🧊
 
 - [ ] AAU, I should be able to rate a song from one to 5 stars.
-- [] AAU, I should be able to sort the songs by their star rating.
-- [] AAU or as a guest, I should be able to click on a button next to the concert review data and add a review.
-- [] AAU or as a guest, I should be able to click on a concert date and see all the reviews.
+- [ ] AAU, I should be able to sort the songs by their star rating.
+- [ ] AAU or as a guest, I should be able to click on a button next to the concert review data and add a review.
+- [ ] AAU or as a guest, I should be able to click on a concert date and see all the reviews.
