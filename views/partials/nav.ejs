@@ -4,12 +4,11 @@
 </head>
 <body>
 <nav>
-  <i class="fas fa-light fa-music"></i>
   <a href="/">HOME</a>
   <% if (user) { %>
   <a href="/songs/new" <%- title === 'Add Song' ? 'class="active"' : '' %>
     >
-    ADD SONG 
+    ADD SONGS 
   </a>
   <% } %>
 
