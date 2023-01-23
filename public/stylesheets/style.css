@@ -100,18 +100,6 @@ nav > a {
   margin-top: 50px;
 }
 
-/* /* .layout {
-  width: 1366px;
-  height: 768px; */
-
-  /* display: grid;
-  grid:
-    "header" 100px
-    "main" 550px
-    "footer" 100px
-    / 3000px;
-} */ */
-
 .header { grid-area: header; }
 .main { grid-area: main; }
 .footer { grid-area: footer; }

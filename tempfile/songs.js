@@ -1,27 +1,27 @@
 import { Song } from "../models/song.js"
 
 function newSong(req, res) {
-    res.render("songs/new", {
-        title: "Add Songs",
-    })
+  res.render("songs/new", {
+    title: "Add Songs",
+  })
 }
 
 function create(req, res) {
-    for (const key in req.body) {
-        if(req.body[key] === "") delete req.body[key]
-    }
-    Song.create(req.body)
-    .then(song => {
-        res.redirect('/songs')
-    })
-    .catch(err => {
-        console.log(err)
-        res.redirect('/songs')
-    })
+  for (const key in req.body) {
+    if(req.body[key] === "") delete req.body[key]
+  }
+  Song.create(req.body)
+  .then(song => {
+    res.redirect('/songs')
+  })
+  .catch(err => {
+    console.log(err)
+      res.redirect('/songs')
+  })
 }
 
 function index(req, res) {
-    Song.find({})
+  Song.find({})
     .then(songs => {
       res.render('songs/index', {
         songs,
@@ -51,25 +51,25 @@ function index(req, res) {
   function deleteSong(req, res) {
     Song.findByIdAndDelete(req.params.id)
     .then(song => {
-        res.redirect("/songs")
+      res.redirect("/songs")
     })
     .catch(err => {
-        console.log(err)
-        res.redirect("/songs")
+      console.log(err)
+      res.redirect("/songs")
     })
   }
 
   function edit(req, res) {
     Song.findById(req.params.id)
     .then(song => {
-        res.render("songs/edit", {
-            song,
-            title: "Edit Song"
-        })
+      res.render("songs/edit", {
+        song,
+        title: "Edit Song"
+      })
     })
     .catch(err => {
-        console.log(err)
-        res.redirect("/")
+      console.log(err)
+      res.redirect("/")
     })
   }
 
