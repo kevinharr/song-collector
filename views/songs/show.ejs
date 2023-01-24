@@ -20,7 +20,7 @@
             <% song.tours.forEach(tour => { %>
             <tr>
                 <td><%= tour.day %></td>
-                <td><%= tour.date %></td>
+                <td><%= tour.date.toISOString().slice(0, 10) %></td>
                 <td><%= tour.start %></td>
                 <td><%= tour.venue %></td>
             </tr>
