@@ -32,7 +32,7 @@ function index(req, res) {
       console.log(err)
       res.redirect("/")
     })
-  }
+}
 
   function show(req, res) {
     Song.findById(req.params.id)
@@ -107,12 +107,12 @@ function index(req, res) {
   }
 
 export {
-    newSong as new,
-    create,
-    index,
-    show,
-    deleteSong as delete,
-    edit,
-    update,
-    createTour,
+  newSong as new,
+  create,
+  index,
+  show,
+  deleteSong as delete,
+  edit,
+  update,
+  createTour,
 }
