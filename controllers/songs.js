@@ -50,9 +50,15 @@ function show(req, res) {
 }
   
 function deleteSong(req, res) {
-  Song.findByIdAndDelete(req.params.id)
+  Song.findById(req.params.id)
   .then(song => {
-    res.redirect("/songs")
+    if (song.owner.equals(req.user.profile._id)) {
+      song.delete()
+      .then(()=> {res.redirect("/songs")
+      })
+    } else {
+      throw new Error("Not Authorized")
+    }
   })
   .catch(err => {
     console.log(err)
@@ -75,21 +81,21 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  for (let key in req.body) {
-    if(req.body[key] === "") delete req.body[key]
-  }
-  Song.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  Song.findById(req.params.id)
   .then(song => {
-    if (song.owner.equals(req.user.profile._id))
-    res.redirect(`/songs`)
+    if (song.owner.equals(req.user.profile._id)) {
+      song.updateOne(req.body)
+      .then(()=> {
+        res.redirect(`/songs`)
+      })
+    } else {
+      throw new Error("Not authorized")
+    }
   })
-  } else {
-    throw new Error("Not authorized")
-  }
   .catch(err => {
     console.log(err)
     res.redirect("/")
-  }
+  })
 }
 
 function createTour(req, res) {
@@ -100,10 +106,10 @@ function createTour(req, res) {
     .then(() => {
       res.redirect(`/songs/${song._id}`)
     })
-      catch(err => {
+    .catch(err => {
       console.log(err)
       res.redirect('/')
-      })
+    })
   })
   .catch(err => {
     console.log(err)

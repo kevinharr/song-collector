@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const tourSchema = new Schema({
   day: String,
-  date: String,
+  date: Date,
   start: String,
   venue: String,
     
@@ -17,7 +17,7 @@ const songSchema = new Schema({
   },
   artist: String,
   album: String,
-  year: String,
+  year: Number,
   genre: String,
   tours: [tourSchema], 
   owner: {type: Schema.Types.ObjectId, ref: "Profile"}
