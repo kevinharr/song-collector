@@ -30,7 +30,7 @@
           <td><%= song.year %></td>
           <td><%= song.genre %></td>
           
-          <% if (user) { %>
+          <% if (song.owner.equals(user?.profile._id)) { %>
           <td>
            
             <form
